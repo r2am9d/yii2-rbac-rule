@@ -1,0 +1,42 @@
+{
+    "name": "r2am9d/yii2-rbac-rule",
+    "description": "Yii2 RBAC Rule Generator Extension for the Yii Framework",
+    "keywords": ["yii2", "rules", "gii", "code generator"],
+    "type": "yii2-extension",
+    "license": "BSD-3-Clause",
+    "support": {
+        "issues": "https://github.com/r2am9d/yii2-rbac-rule/issues",
+        "forum": "http://www.yiiframework.com/forum/",
+        "wiki": "http://www.yiiframework.com/wiki/",
+        "irc": "irc://irc.freenode.net/yii",
+        "source": "https://github.com/yiisoft/yii2-gii"
+    },
+    "authors": [
+        {
+            "name": "Ram Delatina",
+            "email": "ram.delatina.29@gmail.com"
+        }
+    ],
+    "require": {
+        "php": ">=5.6.0",
+        "yiisoft/yii2": "~2.0.14",
+        "phpspec/php-diff": "^1.1.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "r2am9d\\rule\\": ""
+        }
+    },
+    "config": {
+        "process-timeout": 1800,
+        "fxp-asset": {
+            "enabled": false
+        }
+    },
+    "repositories": [
+        {
+            "type": "composer",
+            "url": "https://asset-packagist.org"
+        }
+    ]
+}
