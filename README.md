@@ -22,7 +22,7 @@ php composer.phar require --prefer-dist r2am9d/yii2-rbac-rule
 or add
 
 ```
-"r2am9d/yii2-rbac-rules": "@dev"
+"r2am9d/yii2-rbac-rule": "*"
 ```
 
 to the require-dev section of your `composer.json` file.

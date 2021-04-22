@@ -9,7 +9,7 @@ use yii\gii\CodeFile;
 /**
  * This generator will generate a rule.
  * 
- * @author Ram Delatina <ram.delatina.29@gmail.com>
+ * @author Ram Delatina <r2am9d@gmail.com>
  */
 class Generator extends \yii\gii\Generator
 {
