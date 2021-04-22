@@ -24,7 +24,7 @@
     },
     "autoload": {
         "psr-4": {
-            "r2am9d\\rule\\": ""
+            "r2am9d\\rule\\": "src"
         }
     },
     "config": {
