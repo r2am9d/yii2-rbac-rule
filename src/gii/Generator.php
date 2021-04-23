@@ -44,9 +44,10 @@ class Generator extends \yii\gii\Generator
             [['ns'], 'validateNamespace'],
             [['baseClass'], 'validateClass'],
             [['ruleClass'], 'validateRuleClass'],
+            [['ruleClass'], 'match', 'pattern' => '/^\w+$/', 'message' => 'Only word characters are allowed.'],
             [['ruleClass'], 'match', 'pattern' => '/Rule$/', 'message' => 'Rule class name must be suffixed with "Rule".'],
             [['ruleClass'], 'match', 'pattern' => '/(^|\\\\)[A-Z][^\\\\]+Rule$/', 'message' => 'Rule class name must start with an uppercase letter.'],
-            [['ruleClass', 'ns', 'baseClass'], 'match', 'pattern' => '/^[\w\\\\]*$/', 'message' => 'Only word characters and backslashes are allowed.'],
+            [['ns', 'baseClass'], 'match', 'pattern' => '/^[\w\\\\]*$/', 'message' => 'Only word characters and backslashes are allowed.'],
         ]);
     }
 
