@@ -41,10 +41,12 @@ class Generator extends \yii\gii\Generator
         return array_merge(parent::rules(), [
             [['ruleClass', 'ns', 'baseClass'], 'trim'],
             [['ruleClass', 'ns', 'baseClass'], 'required'],
-            ['ruleClass', 'match', 'pattern' => '/^\w+$/', 'message' => 'Only word characters are allowed.'],
-            ['ruleClass', 'validateRuleClass'],
-            ['ns', 'validateNamespace'],
-            ['baseClass', 'validateClass'],
+            [['ns'], 'validateNamespace'],
+            [['baseClass'], 'validateClass'],
+            [['ruleClass'], 'validateRuleClass'],
+            [['ruleClass'], 'match', 'pattern' => '/Rule$/', 'message' => 'Rule class name must be suffixed with "Rule".'],
+            [['ruleClass'], 'match', 'pattern' => '/(^|\\\\)[A-Z][^\\\\]+Rule$/', 'message' => 'Rule class name must start with an uppercase letter.'],
+            [['ruleClass', 'ns', 'baseClass'], 'match', 'pattern' => '/^[\w\\\\]*$/', 'message' => 'Only word characters and backslashes are allowed.'],
         ]);
     }
 
@@ -66,7 +68,9 @@ class Generator extends \yii\gii\Generator
     public function hints()
     {
         return array_merge(parent::hints(), [
-            'ruleClass' => 'This is the name of the Rule class to be generated, e.g., <code>SomeRule</code>.',
+            'ruleClass' => 'This is the name of the Rule class to be generated. You should
+                provide a fully qualified classname and must be in CamelCase format
+                with an uppercase first letter (e.g. <code>MyAwesomeRule</code>)',
             'ns' => 'This is the namespace of the Rule class to be generated.',
             'baseClass' => 'This is the class that the new Rule class will extend from.',
         ]);
